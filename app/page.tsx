@@ -68,7 +68,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { name: 'React', icon: '⚛️' },
-              { name: 'Next.js', icon: '▲' },
+              { name: 'Next.js', icon: '🚀' },
               { name: 'TypeScript', icon: '📘' },
               { name: 'Node.js', icon: '🟢' },
               { name: 'Python', icon: '🐍' },
