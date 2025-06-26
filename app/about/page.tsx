@@ -1,53 +1,76 @@
+'use client';
+
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
-    <div className="min-h-screen py-20">
+    <div className="min-h-screen py-20 bg-[var(--f1-black)]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: 'spring' }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--f1-red)] mb-6 uppercase tracking-widest">
             About Me
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[var(--f1-white)] max-w-2xl mx-auto">
             I'm a passionate developer who loves creating meaningful digital experiences
           </p>
-        </div>
+        </motion.div>
 
         {/* Profile Section */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, type: 'spring' }}
+          className="bg-[var(--f1-white)] f1-card rounded-lg shadow-md p-8 mb-12"
+        >
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-            <div className="w-48 h-48 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center">
-              <div className="text-8xl">👨‍💻</div>
+            <div className="w-48 h-48 bg-gradient-to-br from-[var(--f1-red)] to-[var(--f1-yellow)] rounded-full flex items-center justify-center">
+              <span className="text-8xl" role="img" aria-label="Ferrari F1 Car">🏎️</span>
             </div>
             <div className="flex-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl font-bold text-[var(--f1-black)] mb-4">
                 Your Name
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-[var(--f1-black)] mb-6">
                 I'm a Full Stack Developer with over 3 years of experience building web applications. 
                 I specialize in React, Next.js, and Node.js, and I'm passionate about creating 
                 user-friendly, scalable solutions that solve real-world problems.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="bg-[var(--f1-red)] text-[var(--f1-white)] px-3 py-1 rounded-full text-sm font-medium">
                   Full Stack Development
                 </span>
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="bg-[var(--f1-yellow)] text-[var(--f1-black)] px-3 py-1 rounded-full text-sm font-medium">
                   UI/UX Design
                 </span>
-                <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="bg-[var(--f1-red)] text-[var(--f1-white)] px-3 py-1 rounded-full text-sm font-medium">
                   Problem Solving
                 </span>
-                <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="bg-[var(--f1-yellow)] text-[var(--f1-black)] px-3 py-1 rounded-full text-sm font-medium">
                   Team Collaboration
                 </span>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Experience Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Experience</h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, type: 'spring' }}
+            className="text-3xl font-extrabold text-[var(--f1-red)] mb-8 uppercase tracking-widest"
+          >
+            Experience
+          </motion.h2>
           <div className="space-y-8">
             {[
               {
@@ -72,76 +95,117 @@ export default function About() {
                 achievements: ['Delivered 15+ client projects', 'Improved site performance', 'Collaborated with designers']
               }
             ].map((job, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5, type: 'spring' }}
+                className="bg-[var(--f1-white)] f1-card rounded-lg shadow-md p-6"
+              >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
-                    <p className="text-blue-600 font-medium">{job.company}</p>
+                    <h3 className="text-xl font-semibold text-[var(--f1-black)]">{job.title}</h3>
+                    <p className="text-[var(--f1-red)] font-medium">{job.company}</p>
                   </div>
-                  <span className="text-gray-500 text-sm mt-2 md:mt-0">{job.period}</span>
+                  <span className="text-[var(--f1-black)] text-sm mt-2 md:mt-0">{job.period}</span>
                 </div>
-                <p className="text-gray-600 mb-4">{job.description}</p>
-                <ul className="list-disc list-inside text-gray-600 space-y-1">
+                <p className="text-[var(--f1-black)] mb-4">{job.description}</p>
+                <ul className="list-disc list-inside text-[var(--f1-black)] space-y-1">
                   {job.achievements.map((achievement, idx) => (
                     <li key={idx}>{achievement}</li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Education Section */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Education</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <motion.h2
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, type: 'spring' }}
+            className="text-3xl font-extrabold text-[var(--f1-red)] mb-8 uppercase tracking-widest"
+          >
+            Education
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, type: 'spring' }}
+            className="bg-[var(--f1-white)] f1-card rounded-lg shadow-md p-6"
+          >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-[var(--f1-black)]">
                   Bachelor of Science in Computer Science
                 </h3>
-                <p className="text-blue-600 font-medium">University Name</p>
+                <p className="text-[var(--f1-red)] font-medium">University Name</p>
               </div>
-              <span className="text-gray-500 text-sm mt-2 md:mt-0">2015 - 2019</span>
+              <span className="text-[var(--f1-black)] text-sm mt-2 md:mt-0">2015 - 2019</span>
             </div>
-            <p className="text-gray-600">
+            <p className="text-[var(--f1-black)]">
               Graduated with honors. Focused on software engineering, algorithms, and web development. 
               Completed capstone project on machine learning applications.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Skills Section */}
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Technical Skills</h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, type: 'spring' }}
+            className="text-3xl font-extrabold text-[var(--f1-red)] mb-8 uppercase tracking-widest"
+          >
+            Technical Skills
+          </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Frontend</h3>
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, type: 'spring' }}
+              className="bg-[var(--f1-white)] f1-card rounded-lg shadow-md p-6"
+            >
+              <h3 className="text-xl font-semibold text-[var(--f1-black)] mb-4">Frontend</h3>
               <div className="space-y-3">
                 {['React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Tailwind CSS'].map((skill) => (
                   <div key={skill} className="flex justify-between items-center">
-                    <span className="text-gray-700">{skill}</span>
-                    <div className="w-24 bg-gray-200 rounded-full h-2">
-                      <div className="bg-blue-600 h-2 rounded-full" style={{ width: '90%' }}></div>
+                    <span className="text-[var(--f1-black)]">{skill}</span>
+                    <div className="w-24 bg-[var(--f1-gray)] rounded-full h-2">
+                      <div className="bg-[var(--f1-red)] h-2 rounded-full" style={{ width: '90%' }}></div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
             
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Backend</h3>
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, type: 'spring' }}
+              className="bg-[var(--f1-white)] f1-card rounded-lg shadow-md p-6"
+            >
+              <h3 className="text-xl font-semibold text-[var(--f1-black)] mb-4">Backend</h3>
               <div className="space-y-3">
                 {['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'AWS', 'Docker'].map((skill) => (
                   <div key={skill} className="flex justify-between items-center">
-                    <span className="text-gray-700">{skill}</span>
-                    <div className="w-24 bg-gray-200 rounded-full h-2">
-                      <div className="bg-blue-600 h-2 rounded-full" style={{ width: '85%' }}></div>
+                    <span className="text-[var(--f1-black)]">{skill}</span>
+                    <div className="w-24 bg-[var(--f1-gray)] rounded-full h-2">
+                      <div className="bg-[var(--f1-red)] h-2 rounded-full" style={{ width: '85%' }}></div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

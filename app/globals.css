@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fff;
   --foreground: #171717;
+  --f1-red: #DC0000;
+  --f1-black: #000000;
+  --f1-white: #fff;
+  --f1-gray: #d9d9d9;
+  --f1-yellow: #FFF200;
 }
 
 @theme inline {
@@ -20,7 +25,23 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--f1-black);
+  color: var(--f1-white);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Formula 1 checkered pattern utility */
+.f1-checkered {
+  background-image: repeating-linear-gradient(45deg, #fff 0 10px, #000 10px 20px);
+}
+
+.f1-stripe {
+  background: linear-gradient(90deg, var(--f1-red) 60%, var(--f1-yellow) 100%);
+  height: 6px;
+  width: 100%;
+}
+
+.f1-card {
+  border: 2px solid var(--f1-red);
+  box-shadow: 0 4px 24px 0 rgba(220,0,0,0.15);
 }

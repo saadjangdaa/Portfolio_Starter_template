@@ -129,11 +129,6 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 3. Set publish directory: `.next`
 4. Add environment variables in Netlify dashboard
 
-#### Railway
-1. Connect your GitHub repository to Railway
-2. Railway will automatically detect Next.js and deploy
-3. Add environment variables in Railway dashboard
-
 ## 📝 Pages Included
 
 - **Home** (`/`) - Landing page with hero section, skills, and featured projects
@@ -179,14 +174,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Styled with [Tailwind CSS](https://tailwindcss.com/)
 - Icons and assets from various sources
 - Inspired by modern portfolio designs
-
-## 📞 Support
-
-If you have any questions or need help with the template, please:
-
-1. Check the [Issues](https://github.com/your-username/Portfolio_Starter_template/issues) page
-2. Create a new issue if your problem isn't already addressed
-3. Reach out via the contact form on the deployed site
 
 ---
 
