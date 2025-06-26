@@ -17,10 +17,26 @@ export default function Home() {
             transition={{ duration: 0.8, type: 'spring' }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-[var(--f1-red)] drop-shadow-lg uppercase tracking-widest">
-              Hi, I'm <span className="text-[var(--f1-yellow)]">Saad Jangda</span>
-            </h1>
-            <p className="text-2xl md:text-3xl text-[var(--f1-white)] mb-8 max-w-3xl mx-auto font-semibold">
+            <div className="flex flex-col items-center justify-center relative">
+              {/* Checkered flag background */}
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-[340px] h-12 z-0 opacity-60" style={{backgroundImage: 'repeating-linear-gradient(135deg, #fff 0 10px, #000 10px 20px)'}} />
+              <div className="flex items-center gap-4 relative z-10">
+                <motion.span
+                  initial={{ x: -40 }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 1, type: 'spring' }}
+                  className="text-[70px] md:text-[100px] drop-shadow-xl"
+                  role="img"
+                  aria-label="Ferrari F1 Car"
+                >
+                  🏎️
+                </motion.span>
+                <h1 className="text-5xl md:text-7xl font-extrabold mb-0 text-[var(--f1-red)] drop-shadow-lg uppercase tracking-widest">
+                  Hi, I'm <span className="text-[var(--f1-yellow)]">Saad Jangda</span>
+                </h1>
+              </div>
+            </div>
+            <p className="text-2xl md:text-3xl text-[var(--f1-white)] mb-8 max-w-3xl mx-auto font-semibold mt-6">
               Full Stack Developer & Formula 1 Enthusiast
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -38,8 +54,8 @@ export default function Home() {
               </Link>
             </div>
             <div className="flex justify-center mt-8">
-              {/* Ferrari F1 Car SVG or Emoji */}
-              <span className="text-[120px] md:text-[180px] drop-shadow-xl" role="img" aria-label="Ferrari F1 Car">
+              {/* Ferrari F1 Car SVG or Emoji (secondary, optional) */}
+              <span className="text-[120px] md:text-[180px] drop-shadow-xl opacity-30" role="img" aria-label="Ferrari F1 Car">
                 🏎️
               </span>
             </div>
