@@ -11,6 +11,8 @@ export default function Navigation() {
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'Projects' },
     { href: '/contact', label: 'Contact' },
+    { href: '/ssg-example', label: 'SSG Demo' },
+    { href: '/ssr-example', label: 'SSR Demo' },
   ];
 
   return (
